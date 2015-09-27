@@ -74,6 +74,23 @@ MaxentModel::MaxentModel():
     }
 
 /**
+ * Checks if feature is in model
+ */
+
+  bool MaxentModel::is_feature_in_model(const feature_type &feature) const {
+    return m_pred_map->has_item(feature);
+  }
+
+/**
+ * Checks if outcome is in model
+ */
+
+  bool MaxentModel::is_outcome_in_model(const outcome_type &outcome) const {
+    return m_outcome_map->has_item(outcome);
+  }
+  
+
+/**
  * Signal the begining of adding event (the start of training).
  *
  * This method must be called before adding any event to the model.

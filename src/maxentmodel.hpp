@@ -81,6 +81,9 @@ class MaxentModel /*: TODO: we need copyable? boost::noncopyable*/  {
     typedef std::vector<pair<feature_type, float> > context_type;
 
     MaxentModel();
+  
+  bool is_feature_in_model(const feature_type &feature) const;
+  bool is_outcome_in_model(const outcome_type &outcome) const;
 
     void load(const string& model);
 
