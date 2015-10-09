@@ -214,6 +214,22 @@ be evaluated together. Feature values are assumed to be 1.0 if omitted.
 ");
             %rename(eval_all) py_eval;
             std::vector<pair<outcome_type, double> > py_eval(const context_type& context) const;
+	    
+	     %feature("docstring", "
+Evaluates whether a feature belongs to the model.
+
+Parameters: 
+feature  one instance of feature
+");
+	    bool is_feature_in_model(const feature_type &feature) const;
+
+	    %feature("docstring", "
+Evaluates whether an outcome belongs to the model.
+
+Parameters: 
+outcome  one instance of outcome
+");
+	    bool is_outcome_in_model(const outcome_type &outcome) const;
     };
 
 
